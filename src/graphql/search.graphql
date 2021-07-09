@@ -1,0 +1,9 @@
+query Search($filter:SearchResultItemConnection!){
+  search(filter:$filter) {
+    issueCount
+    repositoryCount
+    userCount
+    wikiCount
+  }
+}
+# type: USER, query: "", last: 10

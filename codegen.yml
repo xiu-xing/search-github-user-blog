@@ -1,0 +1,13 @@
+schema:
+  - https://api.github.com/graphql:
+      headers:
+        Authorization: Bearer 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
+generates:
+  ./src/generated/graphql.ts:
+    documents: ./src/graphql/**/*.graphql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-urql
+    config:
+      withHooks:true
