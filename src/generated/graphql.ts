@@ -21292,7 +21292,7 @@ export type SearchQuery = (
     & Pick<SearchResultItemConnection, 'issueCount' | 'userCount'>
     & { nodes?: Maybe<Array<Maybe<{ __typename?: 'App' } | { __typename?: 'Discussion' } | { __typename?: 'Issue' } | { __typename?: 'MarketplaceListing' } | { __typename?: 'Organization' } | { __typename?: 'PullRequest' } | { __typename?: 'Repository' } | (
       { __typename?: 'User' }
-      & Pick<User, 'id' | 'name' | 'avatarUrl' | 'url'>
+      & Pick<User, 'id' | 'name' | 'avatarUrl' | 'url' | 'login'>
     )>>> }
   ) }
 );
@@ -21306,7 +21306,7 @@ export type UserQuery = (
   { __typename?: 'Query' }
   & { user?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'avatarUrl' | 'createdAt' | 'company' | 'url'>
+    & Pick<User, 'name' | 'avatarUrl' | 'createdAt' | 'email' | 'url'>
     & { repositories: (
       { __typename?: 'RepositoryConnection' }
       & { edges?: Maybe<Array<Maybe<(
@@ -21332,6 +21332,7 @@ export const SearchDocument = gql`
         name
         avatarUrl
         url
+        login
       }
     }
   }
@@ -21344,9 +21345,10 @@ export function useSearchQuery(options: Omit<Urql.UseQueryArgs<SearchQueryVariab
 export const UserDocument = gql`
     query User($login: String!) {
   user(login: $login) {
+    name
     avatarUrl
     createdAt
-    company
+    email
     url
     repositories(first: 10) {
       edges {

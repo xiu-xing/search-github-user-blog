@@ -8,6 +8,7 @@ query Search($query: String!, $first:Int!){
             name
             avatarUrl
             url
+            login
           }
         }
       }

@@ -1,8 +1,9 @@
 query User ($login:String!){
   user(login: $login) {
+    name
     avatarUrl
     createdAt
-    company
+    email
     url
     repositories(first: 10) {
       edges {

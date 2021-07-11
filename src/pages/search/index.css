@@ -1,8 +1,8 @@
-.container{
+.container {
   background: rgb(214, 208, 208);
   min-height: 100vh;
 }
-.serach{
+.serach {
   display: flex;
   align-items: center;
   height: 100px;
@@ -12,23 +12,23 @@
   font-size: 20px;
   background: rgb(96, 111, 121);
 }
-.img{
+.img {
   margin-left: 20px;
   margin-right: 10px;
   height: 50px;
   width: 65px;
   border-radius: 50%;
 }
-.title{
+.title {
   color: rgb(41, 38, 38);
   font-weight: bold;
 }
-.from{
+.from {
   margin-left: 100px;
   display: flex;
   align-items: center;
 }
-.ipt{
+.ipt {
   width: 300px;
   height: 40px;
   line-height: 40px;
@@ -37,7 +37,7 @@
   padding-left: 10px;
   font-size: 18px;
 }
-.submit{
+.submit {
   height: 46px;
   line-height: 40px;
   text-align: center;
@@ -49,18 +49,18 @@
   padding: 0 10px;
   font-size: 18px;
 }
-.content{
+.content {
   width: 70%;
   margin: 0 auto;
   background: rgb(230, 224, 214);
 }
-.show{
+.show {
   font-size: 22px;
   font-weight: bold;
   text-align: left;
   padding: 15px;
 }
-.item{
+.item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,10 +68,10 @@
   margin-bottom: 10px;
   border-bottom:1px solid black;
 }
-.left{
+.left {
   display: flex;
 }
-.img1{
+.img1 {
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -83,10 +83,10 @@
   font-size: 16px;
 }
 
-.right{
+.right {
   margin-left: 40px;
   
 }
-a:-webkit-any-link{
+a:-webkit-any-link {
   text-decoration: none;
 }

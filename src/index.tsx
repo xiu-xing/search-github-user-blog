@@ -11,7 +11,7 @@ const client = createClient({
   url: 'https://api.github.com/graphql',
   fetchOptions: {
     headers: {
-      'Authorization': 'Bearer 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'
+      'Authorization': 'Bearer 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'
     }
   }
 });

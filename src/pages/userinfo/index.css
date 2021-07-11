@@ -1,0 +1,56 @@
+.u-box {
+  background: rgb(74, 78, 78);
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.u-title {
+font-size: 26px;
+font-weight: bold;
+color: rgb(107, 152, 235);
+text-align: left;
+}
+.u-userinfo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 10px 0;
+  color: wheat;
+}
+.u-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.u-info {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 22px;
+}
+.u-email,.time {
+  margin: 16px 0;
+}
+.u-content {
+  background: rgb(230, 224, 214);
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.repositories {
+  font-size: 26px;
+  font-weight: bold;
+  color: rgb(107, 152, 235);
+  text-align: left;
+}
+.edges {
+  text-align: left;
+  font-size: 22px;
+  color: rgb(44, 16, 109);
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+.r-ssh {
+  margin: 15px 0;
+}

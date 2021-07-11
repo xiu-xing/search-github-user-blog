@@ -10,6 +10,7 @@ export default function Search() {
     name: string
     url: string
     avatarUrl: string
+    login: string
   }
   let [intoStr, setIntoStr] = useState("")
   let [query, setQuery] = useState("")
@@ -58,7 +59,11 @@ export default function Search() {
                 </div>
               </div>
               <div className="right">
-                <Link to="/userinfo">点击查看详细信息</Link>
+                <div>{item.login}</div>
+                <Link to={{
+                  pathname: "/userinfo",
+                  search: `${item.login}`
+                }}>点击查看详细信息</Link>
               </div>
             </div>
           )
