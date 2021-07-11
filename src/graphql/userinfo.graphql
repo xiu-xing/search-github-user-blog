@@ -1,0 +1,18 @@
+query User ($login:String!){
+  user(login: $login) {
+    avatarUrl
+    createdAt
+    company
+    url
+    repositories(first: 10) {
+      edges {
+        node {
+          id
+          name
+          url
+          sshUrl
+        }
+      }
+    }
+  }
+}

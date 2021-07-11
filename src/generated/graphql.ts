@@ -21279,26 +21279,89 @@ export type WorkflowRunPendingDeploymentRequestsArgs = {
 };
 
 
-export type ViewerQueryVariables = Exact<{ [key: string]: never; }>;
+export type SearchQueryVariables = Exact<{
+  query: Scalars['String'];
+  first: Scalars['Int'];
+}>;
 
 
-export type ViewerQuery = (
+export type SearchQuery = (
   { __typename?: 'Query' }
-  & { viewer: (
-    { __typename?: 'User' }
-    & Pick<User, 'login'>
+  & { search: (
+    { __typename?: 'SearchResultItemConnection' }
+    & Pick<SearchResultItemConnection, 'issueCount' | 'userCount'>
+    & { nodes?: Maybe<Array<Maybe<{ __typename?: 'App' } | { __typename?: 'Discussion' } | { __typename?: 'Issue' } | { __typename?: 'MarketplaceListing' } | { __typename?: 'Organization' } | { __typename?: 'PullRequest' } | { __typename?: 'Repository' } | (
+      { __typename?: 'User' }
+      & Pick<User, 'id' | 'name' | 'avatarUrl' | 'url'>
+    )>>> }
   ) }
 );
 
+export type UserQueryVariables = Exact<{
+  login: Scalars['String'];
+}>;
 
-export const ViewerDocument = gql`
-    query Viewer {
-  viewer {
-    login
+
+export type UserQuery = (
+  { __typename?: 'Query' }
+  & { user?: Maybe<(
+    { __typename?: 'User' }
+    & Pick<User, 'avatarUrl' | 'createdAt' | 'company' | 'url'>
+    & { repositories: (
+      { __typename?: 'RepositoryConnection' }
+      & { edges?: Maybe<Array<Maybe<(
+        { __typename?: 'RepositoryEdge' }
+        & { node?: Maybe<(
+          { __typename?: 'Repository' }
+          & Pick<Repository, 'id' | 'name' | 'url' | 'sshUrl'>
+        )> }
+      )>>> }
+    ) }
+  )> }
+);
+
+
+export const SearchDocument = gql`
+    query Search($query: String!, $first: Int!) {
+  search(type: USER, query: $query, first: $first) {
+    issueCount
+    userCount
+    nodes {
+      ... on User {
+        id
+        name
+        avatarUrl
+        url
+      }
+    }
   }
 }
     `;
 
-export function useViewerQuery(options: Omit<Urql.UseQueryArgs<ViewerQueryVariables>, 'query'> = {}) {
-  return Urql.useQuery<ViewerQuery>({ query: ViewerDocument, ...options });
+export function useSearchQuery(options: Omit<Urql.UseQueryArgs<SearchQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<SearchQuery>({ query: SearchDocument, ...options });
+};
+export const UserDocument = gql`
+    query User($login: String!) {
+  user(login: $login) {
+    avatarUrl
+    createdAt
+    company
+    url
+    repositories(first: 10) {
+      edges {
+        node {
+          id
+          name
+          url
+          sshUrl
+        }
+      }
+    }
+  }
+}
+    `;
+
+export function useUserQuery(options: Omit<Urql.UseQueryArgs<UserQueryVariables>, 'query'> = {}) {
+  return Urql.useQuery<UserQuery>({ query: UserDocument, ...options });
 };

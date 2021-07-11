@@ -1,9 +1,22 @@
-query Search($filter:SearchResultItemConnection!){
-  search(filter:$filter) {
-    issueCount
-    repositoryCount
-    userCount
-    wikiCount
-  }
-}
-# type: USER, query: "", last: 10
+query Search($query: String!, $first:Int!){
+      search(type: USER, query: $query, first:$first) {
+        issueCount
+        userCount
+        nodes {
+          ... on User {
+            id
+            name
+            avatarUrl
+            url
+          }
+        }
+      }
+    }
+# query Countries($filter: CountryFilterInput) {
+#   countries(filter:$filter){
+#     code
+#     name
+#     native
+#     phone
+#   }
+# }

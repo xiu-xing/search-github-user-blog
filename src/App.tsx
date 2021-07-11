@@ -1,28 +1,19 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
 import './App.css';
-import { useQuery } from 'urql';
+import Search from './pages/search';
+import UserInfo from './pages/userinfo';
 
 function App() {
-  // const [result, setC] = useQuery({
-  //   query: `
-  //   query{ 
-  //     viewer { 
-  //       login
-  //     }
-  //   }
-  //   `
-  // })
-  // const [res,setV] = useViewerQuery({
-  //   variables:{}
-  // })
-  // useEffect(() => {
-  //     console.log(res);
-  // }, [res])
   return (
-    <div className="App">
-      <h1>Hello My Project</h1>
-    </div>
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={Search} />
+        <Route exact path="/userinfo" component={UserInfo} />
+      </div>
+    </Router>
   );
 }
 

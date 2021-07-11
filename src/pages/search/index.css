@@ -1,0 +1,92 @@
+.container{
+  background: rgb(214, 208, 208);
+  min-height: 100vh;
+}
+.serach{
+  display: flex;
+  align-items: center;
+  height: 100px;
+  line-height: 100px;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 20px;
+  background: rgb(96, 111, 121);
+}
+.img{
+  margin-left: 20px;
+  margin-right: 10px;
+  height: 50px;
+  width: 65px;
+  border-radius: 50%;
+}
+.title{
+  color: rgb(41, 38, 38);
+  font-weight: bold;
+}
+.from{
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+}
+.ipt{
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+.submit{
+  height: 46px;
+  line-height: 40px;
+  text-align: center;
+  margin-left: -2px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: rgb(96, 179, 147);
+  color: white;
+  padding: 0 10px;
+  font-size: 18px;
+}
+.content{
+  width: 70%;
+  margin: 0 auto;
+  background: rgb(230, 224, 214);
+}
+.show{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  padding: 15px;
+}
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-bottom:1px solid black;
+}
+.left{
+  display: flex;
+}
+.img1{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.userinfo {
+  margin-left: 10px;
+  text-align: left;
+  color: rgb(56, 54, 54);
+  font-size: 16px;
+}
+
+.right{
+  margin-left: 40px;
+  
+}
+a:-webkit-any-link{
+  text-decoration: none;
+}

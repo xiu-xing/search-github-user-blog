@@ -7,14 +7,13 @@ import reportWebVitals from './reportWebVitals';
 import { createClient, Provider } from 'urql';
 
 const client = createClient({
-  
   // url: 'https://countries.trevorblades.com/',
   url: 'https://api.github.com/graphql',
   fetchOptions: {
-    headers:{
-      'Authorization': 'Bearer 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'
+    headers: {
+      'Authorization': 'Bearer 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'
     }
-  } 
+  }
 });
 
 ReactDOM.render(
