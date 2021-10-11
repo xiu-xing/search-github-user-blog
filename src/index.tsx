@@ -1,19 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-import { createClient, Provider } from 'urql';
+import { createClient, Provider } from "urql";
 
 const client = createClient({
-  // url: 'https://countries.trevorblades.com/',
-  url: 'https://api.github.com/graphql',
+  url: "https://api.github.com/graphql",
   fetchOptions: {
     headers: {
-      'Authorization': 'Bearer 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'
-    }
-  }
+      Authorization: "Bearer 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",
+    },
+  },
 });
 
 ReactDOM.render(
@@ -22,10 +21,7 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

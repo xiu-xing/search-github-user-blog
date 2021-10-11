@@ -1,4 +1,4 @@
-query User ($login:String!){
+query User($login: String!) {
   user(login: $login) {
     name
     avatarUrl

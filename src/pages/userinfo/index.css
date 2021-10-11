@@ -7,10 +7,10 @@
   padding: 20px;
 }
 .u-title {
-font-size: 26px;
-font-weight: bold;
-color: rgb(107, 152, 235);
-text-align: left;
+  font-size: 26px;
+  font-weight: bold;
+  color: rgb(107, 152, 235);
+  text-align: left;
 }
 .u-userinfo {
   display: flex;
@@ -29,7 +29,8 @@ text-align: left;
   margin-left: 20px;
   font-size: 22px;
 }
-.u-email,.time {
+.u-email,
+.time {
   margin: 16px 0;
 }
 .u-content {
